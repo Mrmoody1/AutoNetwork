@@ -38,9 +38,14 @@
 - [ ] Create Next.js project with TypeScript and Tailwind
 - [ ] Install core dependencies (TanStack Query, Zustand, Prisma, Supabase, etc.)
 - [ ] Install shadcn/ui and essential components
-- [ ] Configure Tailwind with design system colors (from DESIGN_SYSTEM.md)
++ [ ] Add colors to tailwind.config.js:
++     - Primary: #3498db (blue)
++     - Sidebar: #2c3e50 (dark slate)
++     - Success: #2ecc71, #16a085
++     - Warning: #e67e22
++     - Danger: #e74c3c
++     - Purple: #9b59b6
 - [ ] Add Inter font to project
-- [ ] Set up color palette in tailwind.config.js (Blue, Slate, semantic colors)
 - [ ] Create Supabase project and get API keys
 - [ ] Set up environment variables (.env.local)
 - [ ] Initialize Prisma
@@ -48,7 +53,7 @@
 - [ ] Set up GitHub repository
 - [ ] Connect to Vercel
 - [ ] Create basic Supabase and Prisma client files
-- [ ] Test design system colors render correctly
+- [ ] Test with a simple button and card
 
 ### Files Created:
 - `.env.local`
@@ -88,8 +93,11 @@
 - [ ] Add redirect logic (new user → setup, existing → dashboard)
 - [ ] Style auth pages (centered, minimal, responsive) using design system
 - [ ] **Add dark mode toggle to auth header** (sun/moon icon, top-right)
-- [ ] **Implement dark mode with Tailwind dark: classes**
-- [ ] **Save dark mode preference to localStorage**
++ [ ] Add 'dark' class to <html> element on toggle
++ [ ] Add darkmode icons toggle (top-right of auth pages)
++ [ ] Use #3498db for active toggle state
++ [ ] Save as 'theme' key: 'light' or 'dark'
++ [ ] Load preference on page load
 - [ ] **Test dark mode on auth pages**
 
 ### Files Created:
@@ -255,6 +263,7 @@
 
 **Sidebar:**
 - [ ] Build DashboardSidebar with all navigation sections:
+- [ ] Dark slate background (#2c3e50)
   - BUSINESS (Overview, Templates, Reports, Pricing)
   - WEBSITE (Public Site, Branding, Custom Domain, Google Business)
   - INVENTORY (All Vehicles, Add Vehicle, Categories, Photo Gallery)
