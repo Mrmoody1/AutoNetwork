@@ -1,7 +1,7 @@
 # Car Dealer SaaS - Design System
 **Version:** 2.0  
-**Last Updated:** October 28, 2025  
-**Design Style:** Minimal Professional
+**Last Updated:** October 29, 2025  
+**Design Style:** Minimal Professional (Variation 4)
 
 ---
 
@@ -17,7 +17,7 @@
 
 ### Design Inspiration
 - **Like:** Linear, Notion, Professional SaaS dashboards
-- **Unlike:** Flashy, over-animated, nightclub aesthetics
+- **Unlike:** Flashy, over-animated, aggressive designs
 - **Vibe:** Clean business software that's easy to use
 
 ---
@@ -117,190 +117,19 @@ Info/Accent Purple
 
 ---
 
-## 📐 SIDEBAR DESIGN
-
-### Layout Options
-
-**Option 1: Full Sidebar with Text**
-```
-Width: 256px (16rem)
-Background: #2c3e50
-Text Color: white
-Padding: 16px
-```
-
-**Option 2: Icon-Only Sidebar**
-```
-Width: 72px
-Background: white (light) / #252930 (dark)
-Active State: Blue rounded square (#3498db)
-Icon Size: 20px
-Padding: 16px
-```
-
-### Sidebar Structure
-
-```
-┌─────────────────────────┐
-│   [Light/Dark Toggle]   │ ← Top section
-├─────────────────────────┤
-│                         │
-│   Navigation Items      │ ← Main nav
-│   - Dashboard           │
-│   - Inventory           │
-│   - Customers           │
-│   - Calendar            │
-│   - Messages            │
-│   - Analytics           │
-│   - Settings            │
-│                         │
-├─────────────────────────┤
-│   [Profile Section]     │ ← Bottom section
-│   Avatar + Name         │
-└─────────────────────────┘
-```
-
-### Navigation Item States
-
-**Default:**
-```
-Background: transparent
-Text: white (opacity 0.8)
-Icon: white (opacity 0.8)
-Padding: 12px 16px
-Border-radius: 8px
-```
-
-**Hover:**
-```
-Background: rgba(255,255,255,0.1)
-Text: white (opacity 1)
-Icon: white (opacity 1)
-Transition: 150ms ease
-```
-
-**Active:**
-```
-Background: #3498db (primary blue)
-Text: white
-Icon: white
-Border-left: 3px solid white (optional)
-Font-weight: 600
-```
-
-### Dark Mode Toggle
-
-**Position:** Top of sidebar (first element)
-**Style:** Two buttons side-by-side or toggle switch
-
-```
-Layout: [☀️ Light] [🌙 Dark]
-Active: Primary blue background
-Inactive: Transparent, 60% opacity
-Size: 40px × 40px per button
-Border-radius: 8px
-Icons: Sun (light) / Moon (dark)
-```
-
----
-
-## 👤 ACCOUNT BAR (Profile Section)
-
-**Position:** Bottom of sidebar
-**Style:** Minimal profile display
-
-```
-┌─────────────────────────────┐
-│  [Avatar] Mike's Auto Sales │ ← Name
-│           mike@example.com  │ ← Email (optional)
-└─────────────────────────────┘
-
-Components:
-- Avatar: 40px circle, left aligned
-- Name: 14px medium, white
-- Email: 12px regular, white 60% opacity
-- Padding: 16px
-- Border-top: 1px solid rgba(255,255,255,0.1)
-- Hover: slight background highlight
-```
-
-**Dropdown on Click:**
-```
-- Profile Settings
-- Billing
-- Help & Support
-- Sign Out
-```
-
----
-
-## 🔤 TYPOGRAPHY
-
-### Font Family
-```css
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 
-             'Segoe UI', 'Roboto', sans-serif;
-```
-
-### Font Sizes
-
-```
-H1 (Page titles)
-├── Desktop: 32px (2rem) - Bold 700
-└── Mobile:  24px (1.5rem) - Bold 700
-
-H2 (Section headers)
-├── Desktop: 24px (1.5rem) - Semibold 600
-└── Mobile:  20px (1.25rem) - Semibold 600
-
-H3 (Card titles)
-└── 18px (1.125rem) - Semibold 600
-
-Body (Default)
-└── 16px (1rem) - Regular 400 ⭐
-
-Body Small
-└── 14px (0.875rem) - Regular 400
-
-Caption/Label
-└── 12px (0.75rem) - Medium 500
-```
-
-### Font Weights
-- **400** - Regular (body text) ⭐
-- **500** - Medium (labels)
-- **600** - Semibold (headings) ⭐
-- **700** - Bold (page titles)
-
----
-
-## 📏 SPACING SYSTEM
-
-### Scale
-```
-2:   8px    (0.5rem)  ⭐ (tight spacing)
-3:   12px   (0.75rem)
-4:   16px   (1rem)    ⭐ (default spacing)
-6:   24px   (1.5rem)  ⭐ (card padding)
-8:   32px   (2rem)    (section gaps)
-12:  48px   (3rem)    (large gaps)
-```
-
----
-
-## 🎯 LAYOUT SYSTEM
+## 📐 LAYOUT SYSTEM
 
 ### Dashboard Layout
 ```
-┌───────────────────────────────────────┐
-│         Header (64px)                 │
-├────────┬──────────────────────────────┤
-│        │                              │
-│ Side   │    Main Content              │
-│ bar    │    (max 1280px centered)     │
-│ 256px  │                              │
-│        │                              │
-└────────┴──────────────────────────────┘
+┌─────────────────────────────────────────┐
+│         Header (64px)                   │ ← Account dropdown here
+├────────┬────────────────────────────────┤
+│        │                                │
+│ Side   │    Main Content                │
+│ bar    │    (max 1280px centered)       │
+│ 256px  │                                │
+│        │                                │
+└────────┴────────────────────────────────┘
 ```
 
 ### Background
@@ -321,6 +150,196 @@ background: linear-gradient(to bottom, #1a1d23 0%, #1f2329 100%);
 /* Subtle radial accents */
 radial-gradient(at 15% 25%, rgba(52, 152, 219, 0.06) 0%, transparent 50%),
 radial-gradient(at 85% 75%, rgba(155, 89, 182, 0.05) 0%, transparent 50%)
+```
+
+---
+
+## 🧭 SIDEBAR DESIGN (LEFT NAVIGATION)
+
+### Structure
+```
+Width: 256px (16rem)
+Background: #2c3e50
+Position: Fixed left
+Height: 100vh
+```
+
+### Top Section
+```
+Logo/Branding:
+├── Padding: 24px 16px
+├── Border-bottom: 1px solid rgba(255,255,255,0.1)
+└── Content: Logo + Business name
+```
+
+### Navigation Items
+```
+┌─────────────────────────┐
+│  📊 Dashboard           │
+│  🚗 Inventory           │
+│  👥 Customers           │
+│  📅 Calendar            │
+│  ✉️  Messages           │
+│  📈 Analytics           │
+│  ⚙️  Settings           │
+└─────────────────────────┘
+```
+
+**Default State:**
+```
+Background: transparent
+Text: white (opacity 0.8)
+Icon: white (opacity 0.8)
+Padding: 12px 16px
+Border-radius: 8px
+Font: 14px Medium
+```
+
+**Hover State:**
+```
+Background: rgba(255,255,255,0.1)
+Text: white (opacity 1)
+Icon: white (opacity 1)
+Transition: 150ms ease
+```
+
+**Active State:**
+```
+Background: #3498db (primary blue)
+Text: white
+Icon: white
+Font-weight: 600
+```
+
+---
+
+## 🎯 HEADER DESIGN (TOP BAR)
+
+### Structure
+```
+Height: 64px
+Background: white (light) / #1f2329 (dark)
+Border-bottom: 1px solid #e9ecef (light) / #2a2d35 (dark)
+Padding: 0 32px
+Position: Fixed top
+Width: calc(100% - 256px)
+Margin-left: 256px
+```
+
+### Layout
+```
+┌──────────────────────────────────────────────────────┐
+│  Page Title         [🌙] [🔔] [👤 Mike ▾]           │
+└──────────────────────────────────────────────────────┘
+    Left side          Right side →
+```
+
+### Left Side
+```
+Page Title:
+├── Font: 24px Semibold
+├── Color: #343a40 (light) / white (dark)
+└── Breadcrumbs (optional): 14px, secondary color
+```
+
+### Right Side (Account Bar)
+
+**Dark Mode Toggle:**
+```
+Position: Right side, before notifications
+Size: 40px × 40px
+Icon: Sun (light mode) / Moon (dark mode)
+Background: transparent
+Hover: #f1f3f5 (light) / rgba(255,255,255,0.1) (dark)
+Border-radius: 8px
+Color: #6c757d (light) / rgba(255,255,255,0.7) (dark)
+Active: #3498db background, white icon
+```
+
+**Notifications Bell:**
+```
+Position: Right side, before profile
+Size: 40px × 40px
+Icon: Bell (20px)
+Background: transparent
+Hover: #f1f3f5 (light) / rgba(255,255,255,0.1) (dark)
+Border-radius: 8px
+Badge: Red dot for unread (8px circle, top-right)
+```
+
+**Profile Dropdown:**
+```
+Trigger:
+├── Avatar: 32px circle (left)
+├── Name: 14px Medium, truncate at 150px
+├── Chevron: down icon (12px, right)
+├── Padding: 8px 12px
+├── Border-radius: 8px
+├── Hover: #f1f3f5 (light) / rgba(255,255,255,0.1) (dark)
+└── Gap: 8px between elements
+
+Dropdown Menu:
+├── Position: Absolute, top-right
+├── Width: 200px
+├── Background: white (light) / #1f2329 (dark)
+├── Border: 1px solid #e9ecef (light) / #2a2d35 (dark)
+├── Border-radius: 8px
+├── Shadow: lg
+├── Padding: 8px
+└── Items:
+    ├── Profile Settings
+    ├── Billing & Subscription
+    ├── Help & Support
+    ├── Separator (1px border)
+    └── Sign Out (red text)
+
+Menu Item Style:
+├── Padding: 8px 12px
+├── Border-radius: 6px
+├── Font: 14px Regular
+├── Color: #495057 (light) / rgba(255,255,255,0.8) (dark)
+├── Hover: #f1f3f5 (light) / rgba(255,255,255,0.1) (dark)
+├── Icon: 16px (left, 8px gap)
+└── Transition: 150ms ease
+```
+
+---
+
+## 🔤 TYPOGRAPHY
+
+### Font Family
+```css
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 
+             'Segoe UI', 'Roboto', sans-serif;
+```
+
+### Font Sizes
+```
+H1 (Page titles): 24px Semibold
+H2 (Section headers): 20px Semibold
+H3 (Card titles): 18px Semibold
+Body (Default): 16px Regular ⭐
+Body Small: 14px Regular
+Caption/Label: 12px Medium
+```
+
+### Font Weights
+- **400** - Regular (body text) ⭐
+- **500** - Medium (labels)
+- **600** - Semibold (headings) ⭐
+- **700** - Bold (emphasis)
+
+---
+
+## 📏 SPACING SYSTEM
+
+```
+2:   8px    (0.5rem)  ⭐ (tight spacing)
+3:   12px   (0.75rem)
+4:   16px   (1rem)    ⭐ (default spacing)
+6:   24px   (1.5rem)  ⭐ (card padding)
+8:   32px   (2rem)    (section gaps)
+12:  48px   (3rem)    (large gaps)
 ```
 
 ---
@@ -472,11 +491,11 @@ xl:  1280px  ⭐ (desktops)
 ## 🔣 ICON LIBRARY
 
 ### Icon Library
-**Use:** Lucide React (included in shadcn/ui)
+**Use:** Lucide React
 
 ### Icon Sizes
 ```
-Small: 16px (inline with text)
+Small: 16px (inline, dropdown menus)
 Default: 20px ⭐ (buttons, nav)
 Medium: 24px (cards, features)
 Large: 48px (stat cards, empty states)
@@ -489,34 +508,12 @@ Style: Outline (not filled)
 Color: Inherit from parent
 ```
 
-### Business Icons (Style Reference)
-**Style:** Clean line icons, professional
-**Color Usage:** 
-- Sidebar: white on dark (#2c3e50)
-- Cards: colored backgrounds (matching semantic colors)
-- Stat cards: larger size with colored circle background
-
-**Common Icons Needed:**
-- Dashboard: BarChart3
-- Inventory: Car
-- Customers: Users
-- Calendar: Calendar
-- Messages: Mail
-- Analytics: TrendingUp
-- Settings: Settings
-- Plus: Plus (add actions)
-
 ---
 
 ## 🌙 DARK MODE
 
-### Implementation
-```
-Toggle: Top of sidebar (sun/moon icons)
-Storage: localStorage ('theme' key)
-Default: Light mode
-Class: 'dark' on <html> element
-```
+### Toggle Location
+**Position:** Header, right side (before notifications)
 
 ### Color Overrides (Dark Mode)
 ```
@@ -526,12 +523,13 @@ Text Primary: white
 Text Secondary: rgba(255,255,255,0.7)
 Borders: #2a2d35
 Sidebar: #252930 (slightly lighter than main bg)
+Header: #1f2329
 ```
 
 ### Usage
 ```jsx
-<div className="bg-white dark:bg-slate-900">
-<p className="text-slate-700 dark:text-slate-100">
+<div className="bg-white dark:bg-[#1f2329]">
+<p className="text-slate-700 dark:text-white">
 ```
 
 ---
@@ -540,14 +538,10 @@ Sidebar: #252930 (slightly lighter than main bg)
 
 **Before Coding Any Page:**
 - [ ] Uses correct color palette (#3498db, #2c3e50, etc.)
-- [ ] Uses correct typography scale
-- [ ] Uses correct spacing (8px, 16px, 24px)
-- [ ] Sidebar design matches patterns above
-- [ ] Account bar at bottom of sidebar
-- [ ] Light/Dark toggle at top of sidebar
-- [ ] Includes hover states (150ms transition)
-- [ ] Proper focus states for accessibility
-- [ ] Uses Lucide React icons (20px default)
+- [ ] LEFT sidebar (256px) with navigation
+- [ ] Header with account dropdown (top-right)
+- [ ] Dark mode toggle in header
+- [ ] Proper hover states (150ms transition)
 - [ ] Cards have subtle shadows
 - [ ] Border radius: 8px (inputs/buttons), 12px (cards)
 - [ ] Dark mode works correctly
@@ -570,39 +564,12 @@ Shadow: sm (default), md (hover)
 Transition: 150ms ease-out
 Font: 16px Regular (body), 14px Medium (labels)
 Icon Size: 20px (default)
+Sidebar Width: 256px
+Header Height: 64px
 ```
 
 ---
 
-## 📚 IMPLEMENTATION NOTES
-
-### With Tailwind CSS
-```jsx
-// Primary button
-<button className="bg-[#3498db] hover:bg-[#2980b9] text-white 
-                   font-medium py-3 px-6 rounded-lg shadow-sm 
-                   transition-colors duration-150">
-  Click me
-</button>
-
-// Card
-<div className="bg-white dark:bg-[#1f2329] border border-gray-200 
-                dark:border-[#2a2d35] rounded-xl p-6 shadow-sm 
-                hover:shadow-md transition-shadow">
-  Content
-</div>
-
-// Sidebar nav item
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg
-              text-white/80 hover:bg-white/10 hover:text-white
-              transition-colors duration-150">
-  <Icon size={20} />
-  Dashboard
-</a>
-```
-
----
-
-**This design system should be referenced for ALL pages and components.**
+**This design system matches Variation 4 - Minimal Professional exactly.**
 
 *Keep it minimal. Keep it professional. Keep it functional.*
