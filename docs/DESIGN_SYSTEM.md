@@ -175,13 +175,13 @@ Logo/Branding:
 ### Navigation Items
 ```
 ┌─────────────────────────┐
-│  📊 Dashboard           │
-│  🚗 Inventory           │
-│  👥 Customers           │
-│  📅 Calendar            │
-│  ✉️  Messages           │
-│  📈 Analytics           │
-│  ⚙️  Settings           │
+│ icon-Dashboard          │
+│ icon-Inventory          │
+│ icon-Customers          │
+│ icon-Calendar           │
+│ icon-Messages           │
+│ icon-Analytics          │
+│ icon-Settings           │
 └─────────────────────────┘
 ```
 
